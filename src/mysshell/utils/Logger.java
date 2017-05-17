@@ -68,7 +68,7 @@ public class Logger
         DateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-mm-dd HH:mm:ss");
         Calendar cal = Calendar.getInstance();
-        if(error != null)
+        if(error == null)
         {
             String log = "\n\n" + dateFormat.format(cal.getTime()) + " - (II): ";
             log += debugString;

@@ -8,6 +8,9 @@ import java.io.PrintWriter;
  */
 public class Alumno implements Usuario
 {
+
+
+
     public void displayInterface() throws IOException
     {
     }

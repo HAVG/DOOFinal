@@ -22,7 +22,6 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Resumen</a></li>
                       <!--  <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -33,7 +32,7 @@
                         </li>-->
                         <li><a href="#">Tareas</a></li>
                         <li><a href="#">Calificaciones</a></li>
-                        <li><a href="#">Enviar mensaje a maestro</a></li>
+                        <li><a onclick="">Enviar mensaje a maestro</a></li>
                     </ul>
                     <!--<ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -42,12 +41,33 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-           <h3 class="tema">Tareas</h3>
-            <% session.getAttribute("tareas"); %>
-            <br><br>
-            <h3 class="tema">Calificaciones</h3>
-            <% session.getAttribute("calificaciones"); %>
+        <!-- Esta tabla debe de ser rellenada con la informacion de sql -->
+        <div class="container" id="inyectable">
+            <div>
+                <h6>Ultimas tareas</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Materia</th>
+                            <th>Fecha</th>
+                            <th>Completada</th>
+                        </tr>
+                        <tr><%=out.println(request.getAttribute("materia"))%></tr>
+                        <tr><%=out.println(request.getAttribute("fecha"))%></tr>
+                        <tr><%
+                            if(Boolean.parseBoolean(request.getAttribute("seExpiro").toString()))
+                            {
+                                out.println("<img class=\"glyphicon glyphicon-remove\">\n");
+                            }
+                            else
+                            {
+                                out.println("<img class=\"glyphicon glyphicon-ok\">\n");
+                            }
+                        %>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </body>
     <script src="extraSources/jquery-3.2.1.min.js"></script>

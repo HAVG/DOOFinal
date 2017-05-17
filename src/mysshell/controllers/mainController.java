@@ -15,6 +15,9 @@ public class mainController extends HttpServlet
         Logger logger = Logger.getInstance("/home/diego/logs.txt",  "error.jsp");
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
+        String materia = "Matematicas";
+        String fecha = "/01/02/2017";
+        boolean seExpiro = true;
         if(username.equals("hola") && password.equals("mundo"))
         {
             logger.commitEvent("Se ha iniciado sesion", null, request, response);
