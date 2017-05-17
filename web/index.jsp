@@ -3,8 +3,8 @@
     <head>
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="extraSources/bootstrap.min.css">
-        <link rel="stylesheet" href="extraSources/mainStyles.css">
+        <link rel="stylesheet" href="extraSources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="extraSources/css/mainStyles.css">
         <style>
             .container{
                 padding-left: 18%;
@@ -50,6 +50,6 @@
             </div>
         </section>
     </body>
-    <script rel="script" src="extraSources/jquery-3.2.1.min.js"></script>
-    <script rel="script" src="extraSources/bootstrap.min.js"></script>
+    <script rel="script" src="extraSources/js/jquery-3.2.1.min.js"></script>
+    <script rel="script" src="extraSources/js/bootstrap.min.js"></script>
 </html>

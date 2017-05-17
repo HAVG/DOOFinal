@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Error</title>
-    <link rel="stylesheet" href="extraSources/mainStyles.css">
+    <link rel="stylesheet" href="extraSources/bootstrap/mainStyles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

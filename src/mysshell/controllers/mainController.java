@@ -20,7 +20,11 @@ public class mainController extends HttpServlet
         boolean seExpiro = true;
         if(username.equals("hola") && password.equals("mundo"))
         {
+            HttpSession session = request.getSession();
             logger.commitEvent("Se ha iniciado sesion", null, request, response);
+            session.setAttribute("materia", "Matematicas");
+            session.setAttribute("fecha", "01/02/2017");
+            session.setAttribute("seExpiro", "true");
             response.sendRedirect("Alumno.jsp");
         }
         else

@@ -6,10 +6,10 @@
         <title>Dashboard</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="extraSources/bootstrap.min.css">
-        <link rel="stylesheet" href="extraSources/mainStyles.css">
+        <link rel="stylesheet" href="extraSources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="extraSources/css/mainStyles.css">
     </head>
-    <body>
+    <body style="font-size: large">
         <nav class="navbar navbar-inverse sidebar-nav">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -44,7 +44,7 @@
         <!-- Esta tabla debe de ser rellenada con la informacion de sql -->
         <div class="container" id="inyectable">
             <div>
-                <h6>Ultimas tareas</h6>
+                <h2 style="text-align: center">Ultimas tareas</h2>
                 <table class="table">
                     <thead>
                         <tr>
@@ -52,24 +52,58 @@
                             <th>Fecha</th>
                             <th>Completada</th>
                         </tr>
-                        <tr><%=out.println(request.getAttribute("materia"))%></tr>
-                        <tr><%=out.println(request.getAttribute("fecha"))%></tr>
-                        <tr><%
-                            if(Boolean.parseBoolean(request.getAttribute("seExpiro").toString()))
-                            {
-                                out.println("<img class=\"glyphicon glyphicon-remove\">\n");
-                            }
-                            else
-                            {
-                                out.println("<img class=\"glyphicon glyphicon-ok\">\n");
-                            }
-                        %>
-                        </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>Matematicas<%--(String)request.getAttribute("materia")--%></td>
+                            <td>5/17<%--(String)request.getAttribute("fecha")--%></td>
+                            <td><%
+                                if(Boolean.parseBoolean((String)request.getAttribute("seExpiro")))
+                                {
+                                    out.println("<span class=\"glyphicon glyphicon-remove\"></span>\n");
+                                }
+                                else
+                                {
+                                    out.println("<span class=\"glyphicon glyphicon-ok\"></span>\n");
+                                }
+                            %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Español</td>
+                            <td>5/17</td>
+                            <td><%
+                                if(Boolean.parseBoolean((String)request.getAttribute("seExpiro")))
+                                {
+                                    out.println("<span class=\"glyphicon glyphicon-remove\"></span>\n");
+                                }
+                                else
+                                {
+                                    out.println("<span class=\"glyphicon glyphicon-ok\"></span>\n");
+                                }
+                            %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Judios</td>
+                            <td>5/17</td>
+                            <td><%
+                                if(Boolean.parseBoolean((String)request.getAttribute("seExpiro")))
+                                {
+                                    out.println("<span class=\"glyphicon glyphicon-remove\"></span>\n");
+                                }
+                                else
+                                {
+                                    out.println("<span class=\"glyphicon glyphicon-ok\"></span>\n");
+                                }
+                            %>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </body>
-    <script src="extraSources/jquery-3.2.1.min.js"></script>
-    <script src="extraSources/bootstrap.min.js"></script>
+    <script src="extraSources/js/jquery-3.2.1.min.js"></script>
+    <script src="extraSources/js/bootstrap.min.js"></script>
 </html>
