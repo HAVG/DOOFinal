@@ -32,6 +32,8 @@ public class mainController extends HttpServlet
             /**Si no se autentica correctamente, entonces se ha de crear una variable llamada
                 loginError, se le asignara el valor de true, y entonces se reenviara la variable
                 al index.jsp **/
+            HttpSession session=request.getSession();
+            session.setAttribute("loginError","true");
             logger.commitEvent("Se han ingresado las credenciales erroneas:" +
                              username + " " + password);
         }
