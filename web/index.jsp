@@ -10,6 +10,17 @@
                 padding-left: 18%;
                 padding-right: 18%;
             }
+            .jumbotron-padder{
+                padding-top: 12px;
+                padding-bottom: 12px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            .jumbotron{
+                background-color: #b0b0b0;
+                color: #505050;
+                text-align: center;
+            }
         </style>
     </head>
     <body style="font-size: large">
@@ -46,6 +57,20 @@
                             Iniciar Sesion
                         </button>
                     </div>
+                    <%-- Con estas lineas de abajo intento delcarar decir, que si
+                        las credencialess son incorrectas entonces se inyectara ese codigo--%>
+                    <%
+                        if(Boolean.parseBoolean((String)request.getAttribute("loginError")))
+
+                        {
+                            out.println("<div class=\"col-xs-12\">\n" +
+                                    "                        <br><br><br><br>\n" +
+                                    "                        <div class=\"jumbotron jumbotron-padder\">\n" +
+                                    "                            Usuario o contraseña incorrectos.\n" +
+                                    "                        </div>\n" +
+                                    "                    </div>");
+                        }
+                    %>
                 </form>
             </div>
         </section>
