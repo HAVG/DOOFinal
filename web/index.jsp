@@ -60,8 +60,8 @@
                     <%-- Con estas lineas de abajo intento delcarar decir, que si
                         las credencialess son incorrectas entonces se inyectara ese codigo--%>
                     <%
-                        if(Boolean.parseBoolean((String)request.getAttribute("loginError")))
-
+                        if(session.getAttribute("loginError")!=null)
+                            
                         {
                             out.println("<div class=\"col-xs-12\">\n" +
                                     "                        <br><br><br><br>\n" +
